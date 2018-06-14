@@ -10,7 +10,7 @@ app.use('/', function (req, res, next) {
 });
 
 app.use('/:s', function (req, res, next) {
-	res.send(s);
+	res.send(req.params.s);
 });
 
 console.log("Poceo je da slusa!!!");
