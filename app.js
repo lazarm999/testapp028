@@ -9,6 +9,10 @@ app.use('/', function (req, res, next) {
 	res.send('Thank you!');
 });
 
+app.use('/:s', function (req, res, next) {
+	res.send(s);
+});
+
 console.log("Poceo je da slusa!!!");
 
 app.listen(port);
