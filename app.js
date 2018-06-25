@@ -17,4 +17,6 @@ app.get('/:s', function (req, res) {
 	res.send(req.params.s);
 });
 
-app.listen(8080);
+console.log("Poceo je da slusa!!!");
+
+app.listen(port);
