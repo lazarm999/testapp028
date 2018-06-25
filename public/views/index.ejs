@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cat Clicker</title>
+    </head>
+    <body>
+        <ul id="cat-list"></ul>
+        <div id="cat">
+            <h2 id="cat-name" data-bind="text: name"></h2>
+            <div id="cat-count" data-bind="text: clickCount"></div>
+            <img id="cat-img" src="" alt="cute cat" data-bind = "click: incrementCounter,
+            attr: {src: imgSrc}">
+        </div>
+        </br>
+        <table>
+            <thead>
+                <tr><th>First name</th><th>Last name update </th></tr>
+            </thead>
+            <tbody data-bind="foreach: array">
+                <tr>
+                    <td data-bind="text: firstName"></td>
+                    <td data-bind="text: lastName"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </body>
+    <script src="/js/lib/knockout-3.2.0.js"></script>
+    <script src="/js/catClicker.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+</html>
