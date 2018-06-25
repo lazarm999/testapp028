@@ -1,18 +1,20 @@
 var express = require('express');
 var app = express();
+var path = require("path");
 
 var port = process.env.PORT || 8080;
 
 app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, '/public')));
+app.set('views', path.join(__dirname, '/public/views'));
 
-app.use('/', function (req, res, next) {
-	res.send('Thank you!');
+app.get('/', function(req, res) {
+	//res.sendFile(path.join(__dirname +'/views/index.html'));
+	res.render('index');
 });
 
-app.use('/:s', function (req, res, next) {
-	res.send(s);
+app.get('/:s', function (req, res) {
+	res.send(req.params.s);
 });
 
-console.log("Poceo je da slusa!!!");
-
-app.listen(port);
+app.listen(8080);
